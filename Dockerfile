@@ -39,7 +39,7 @@ RUN cd ~ \
     && git checkout $(git describe --abbrev=0 --tags) \
     && mkdir obj \
     && chmod 755 leveldb/build_detect_platform  
-RUN make -f makefile.unix USE_UPNP=-  \
+RUN cd ~/Gridcoin-Research/src && make -f makefile.unix USE_UPNP=-  \
     && strip gridcoinresearchd \ 
     && install -m 755 gridcoinresearchd /usr/bin/gridcoinresearchd 
 	
